@@ -1,0 +1,75 @@
+/* Algemene styling */
+.home {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Header styling */
+.Logo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+}
+
+.header button {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* Banner styling */
+.banner {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: var(--banner-bg);
+    color: var(--banner-text);
+    border-radius: 10px;
+}
+
+/* Films sectie */
+.movies {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.movie-grid {
+    display: flex;
+    justify-content: space-around;
+}
+
+.movie-card {
+    width: 200px;
+    text-align: center;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Dynamische thema's */
+.light {
+    --header-bg: #f0f0f0;
+    --header-text: #333;
+    --banner-bg: #fff;
+    --banner-text: #000;
+    --footer-bg: #f0f0f0;
+    --footer-text: #333;
+}
+
+.dark {
+    --header-bg: #333;
+    --header-text: #f0f0f0;
+    --banner-bg: #444;
+    --banner-text: #f0f0f0;
+    --footer-bg: #333;
+    --footer-text: #f0f0f0;
+}

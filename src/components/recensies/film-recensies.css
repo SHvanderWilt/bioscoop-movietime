@@ -1,0 +1,64 @@
+/* Algemene styling voor beide schermen */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .movies, .reviews {
+    width: 48%;
+  }
+  
+  .movie-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .movie-item {
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .review-form {
+    margin-top: 10px;
+  }
+  
+  .review-item {
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .discount-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  /* Media query voor mobiele schermen */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .movies, .reviews {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .movie-item {
+      width: 45%;
+      margin: 5px;
+    }
+    
+    .review-item {
+      margin-bottom: 15px;
+    }
+  }
+  

@@ -1,0 +1,47 @@
+/* Algemene styling voor de vestigingenpagina */
+.locations-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  .locations-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .location-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 30%; /* Standaard drie blokken per rij */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .location-card h2 {
+    margin-top: 0;
+  }
+  
+  .location-card p {
+    margin: 5px 0;
+  }
+  
+  .location-card a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  /* Responsiveness voor mobiele schermen */
+  @media (max-width: 768px) {
+    .location-card {
+      width: 100%; /* Eén blok per rij */
+      margin: 10px 0;
+    }
+  }
+  
