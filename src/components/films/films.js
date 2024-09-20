@@ -1,6 +1,5 @@
-// PlaceholderPage.js
 import React from 'react';
-import './films.css'; // Optional: Add styles for the placeholder page
+import './films.css';
 
 const PlaceholderPage = () => {
   return (
