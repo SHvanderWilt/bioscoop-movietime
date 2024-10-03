@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './header.css';
+import Placeholder from '../pictures/placeholder.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,9 @@ const Header = () => {
         <div className="bar"></div>
         <div className="bar"></div>
         <div className="bar"></div>
+      </div>
+      <div className="logo">
+        <img src={Placeholder} alt="Logo" />
       </div>
       <nav className={`nav ${isOpen ? 'active' : ''}`}>
         <ul>

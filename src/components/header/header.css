@@ -1,96 +1,120 @@
 /* Header styling */
 .header {
-    background: #333;
-    color: white;
-    padding: 10px 20px;
-    position: relative;
-    width: 100%;
-    transition: background 0.3s, padding 0.3s;
-    display: flex;
-    justify-content: space-between; /* Aligns logo and nav to ends */
-    align-items: center; /* Vertically centers content */
-  }
-  
-  .header.sticky {
-    background: #222;
-    padding: 5px 20px;
-  }
-  
-  /* Menu toggle styling */
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+  width: 100%;
+  transition: background 0.3s, padding 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header.sticky {
+  background: #333;
+  padding: 5px 20px;
+}
+
+/* Logo styling */
+.logo {
+  margin-right: auto; /* Ensure the logo is on the left */
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Menu toggle styling */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-toggle .bar {
+  background: white;
+  height: 3px;
+  width: 25px;
+}
+
+/* Navbar styling */
+nav {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* Removed margin-right: 1100px to fix layout issue */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px; /* Space between nav items */
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .menu-toggle {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-  }
-  
-  .menu-toggle .bar {
-    background: white;
-    height: 3px;
-    width: 25px;
-  }
-  
-  /* Navbar styling */
-  nav {
     display: flex;
-    align-items: center; /* Vertically center nav items */
+    position: absolute;
+    left: 20px; /* Ensure hamburger menu is on the left */
+    z-index: 10; /* Make sure the toggle is above the nav */
   }
-  
+
+  .header {
+    height: 35px;
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Center the logo */
+    z-index: 9; /* Ensure logo remains behind the menu toggle */
+  }
+
+  nav {
+    display: none;
+    position: absolute; /* Make sure the nav is positioned properly */
+    top: 100%; /* Ensure the nav appears right under the header */
+    left: 0;
+    width: 100%;
+    background-color: #444; /* Give background color to nav in responsive mode */
+  }
+
+  nav.active {
+    display: flex;
+    flex-direction: column; /* Stack menu items vertically */
+  }
+
   nav ul {
-    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     padding: 0;
     margin: 0;
-    display: flex;
-    gap: 20px; /* Adds space between menu items */
   }
-  
+
   nav ul li {
-    display: inline;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #444;
   }
-  
+
   nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px; /* Adds space around text */
-    display: block; /* Makes the whole area clickable */
+    padding: 10px;
   }
-  
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: flex;
-    }
-  
-    nav {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-    }
-  
-    nav.active {
-      display: flex;
-    }
-  
-    nav ul {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      padding: 0; /* Remove default padding */
-      margin: 0; /* Remove default margin */
-    }
-  
-    nav ul li {
-      text-align: center;
-      padding: 10px;
-      border-top: 1px solid #444;
-    }
-  
-    nav ul li a {
-      padding: 10px;
-    }
-  }
-  
+}
