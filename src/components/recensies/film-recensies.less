@@ -1,0 +1,92 @@
+// Variables
+@container-padding: 20px;
+@half-width: 48%;
+@movie-item-width: 30%;
+@movie-item-margin: 10px;
+@review-bg-color: #f9f9f9;
+@review-padding: 10px;
+@border-radius-default: 5px;
+@discount-bg-color: #d4edda;
+@discount-text-color: #155724;
+@media-breakpoint: 768px;
+@media-padding: 10px;
+@mobile-item-width: 45%;
+@mobile-item-margin: 5px;
+@review-item-margin-mobile: 15px;
+
+// Mixins
+.flex-space-between-wrap() {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.flex-wrap() {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container-style() {
+  padding: @container-padding;
+  .flex-space-between-wrap();
+}
+
+// LESS with Nesting, Variables, Mixins, and Operators
+.container {
+  .container-style(); // Use mixin for container layout
+  
+  .movies, .reviews {
+    width: @half-width;
+  }
+}
+
+.movie-list {
+  .flex-wrap(); // Mixin for wrapping movie items
+}
+
+.movie-item {
+  width: @movie-item-width;
+  margin: @movie-item-margin;
+  text-align: center;
+}
+
+.review-form {
+  margin-top: 10px;
+}
+
+.review-item {
+  margin-bottom: 20px;
+  background-color: @review-bg-color;
+  padding: @review-padding;
+  border-radius: @border-radius-default;
+}
+
+.discount-message {
+  background-color: @discount-bg-color;
+  color: @discount-text-color;
+  padding: @review-padding;
+  border-radius: @border-radius-default;
+  margin-top: 20px;
+}
+
+/* Media query voor mobiele schermen */
+@media (max-width: @media-breakpoint) {
+  .container {
+    flex-direction: column;
+    padding: @media-padding;
+  }
+
+  .movies, .reviews {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .movie-item {
+    width: @mobile-item-width;
+    margin: @mobile-item-margin;
+  }
+  
+  .review-item {
+    margin-bottom: @review-item-margin-mobile;
+  }
+}

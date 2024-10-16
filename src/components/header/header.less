@@ -1,0 +1,143 @@
+// Variables
+@primary-bg-color: #333;
+@secondary-bg-color: #444;
+@white-color: white;
+@padding-small: 5px 20px;
+@padding-large: 10px 20px;
+@transition-time: 0.3s;
+@logo-size: 50px;
+@menu-toggle-width: 25px;
+@menu-toggle-height: 3px;
+@menu-gap: 5px;
+@nav-item-gap: 20px;
+@mobile-breakpoint: 768px;
+@header-height-mobile: 35px;
+
+// Mixins
+.flex-center() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-toggle-bars() {
+  background: @white-color;
+  height: @menu-toggle-height;
+  width: @menu-toggle-width;
+}
+
+// LESS with Nesting, Variables, Mixins, and Operators
+.header {
+  background: @primary-bg-color;
+  color: @white-color;
+  padding: @padding-large;
+  position: relative;
+  width: 100%;
+  transition: background @transition-time, padding @transition-time;
+  .flex-center(); // Use mixin for flexbox centering
+
+  &.sticky {
+    padding: @padding-small;
+  }
+}
+
+.logo {
+  margin-right: auto; // Ensure the logo is on the left
+
+  img {
+    width: @logo-size;
+    height: @logo-size;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  .flex-column();
+  gap: @menu-gap;
+
+  .bar {
+    .menu-toggle-bars(); // Use mixin for toggle bar styles
+  }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: @nav-item-gap; // Space between nav items
+
+    li a {
+      color: @white-color;
+      text-decoration: none;
+      padding: 10px;
+      display: block;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Responsive Styles
+@media (max-width: @mobile-breakpoint) {
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    left: 20px;
+    z-index: 10;
+  }
+
+  .header {
+    height: @header-height-mobile;
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: @secondary-bg-color;
+
+    &.active {
+      .flex-column(); // Use mixin to stack items vertically
+    }
+
+    ul {
+      .flex-column(); // Stack menu items vertically
+      width: 100%;
+      padding: 0;
+      margin: 0;
+
+      li {
+        text-align: center;
+        padding: 10px;
+        border-top: 1px solid @secondary-bg-color;
+      }
+
+      li a {
+        padding: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+// Variables
+@font-family: 'Arial', sans-serif;
+@padding-default: 20px;
+@max-width: 1200px;
+@button-padding: 10px 15px;
+@border-radius-default: 10px;
+@movie-card-width: 200px;
+@light-header-bg: #f0f0f0;
+@light-header-text: #333;
+@light-banner-bg: #fff;
+@light-banner-text: #000;
+@dark-header-bg: #333;
+@dark-header-text: #f0f0f0;
+@dark-banner-bg: #444;
+@dark-banner-text: #f0f0f0;
+
+// Mixins
+.flex-center-column() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-space-between() {
+  display: flex;
+  justify-content: space-between;
+}
+
+.full-width() {
+  width: 100%;
+  max-width: @max-width;
+}
+
+// LESS with Nesting, Variables, Mixins, and Operators
+.home {
+  font-family: @font-family;
+  .flex-center-column(); // Using mixin for flex centering
+  padding: @padding-default;
+}
+
+/* Header styling */
+.Logo {
+  .flex-space-between(); // Using mixin for space-between layout
+  .full-width(); // Use mixin to set full width and max width
+  padding: 10px;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+}
+
+.header button {
+  padding: @button-padding;
+  cursor: pointer;
+}
+
+/* Banner styling */
+.banner {
+  text-align: center;
+  margin: @padding-default 0;
+  padding: @padding-default;
+  background-color: var(--banner-bg);
+  color: var(--banner-text);
+  border-radius: @border-radius-default;
+}
+
+/* Films sectie */
+.movies {
+  .full-width(); // Use mixin to set full width and max width
+}
+
+.movie-grid {
+  display: flex;
+  justify-content: space-around;
+}
+
+.movie-card {
+  width: @movie-card-width;
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: @border-radius-default;
+  }
+}
+
+/* Dynamic themes */
+.light {
+  --header-bg: @light-header-bg;
+  --header-text: @light-header-text;
+  --banner-bg: @light-banner-bg;
+  --banner-text: @light-banner-text;
+  --footer-bg: @light-header-bg;
+  --footer-text: @light-header-text;
+}
+
+.dark {
+  --header-bg: @dark-header-bg;
+  --header-text: @dark-header-text;
+  --banner-bg: @dark-banner-bg;
+  --banner-text: @dark-banner-text;
+  --footer-bg: @dark-header-bg;
+  --footer-text: @dark-header-text;
+}

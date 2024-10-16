@@ -1,0 +1,70 @@
+// Variables
+@container-padding: 20px;
+@margin-bottom-default: 20px;
+@card-bg-color: #f9f9f9;
+@card-border-color: #ddd;
+@border-radius-default: 8px;
+@card-padding: 20px;
+@card-margin: 10px;
+@card-width: 30%;
+@box-shadow-default: 0 2px 5px rgba(0, 0, 0, 0.1);
+@link-color: #007bff;
+@media-breakpoint: 768px;
+@mobile-card-width: 100%;
+@mobile-card-margin: 10px 0;
+
+// Mixins
+.flex-space-between-wrap() {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card-style() {
+  background-color: @card-bg-color;
+  border: 1px solid @card-border-color;
+  border-radius: @border-radius-default;
+  padding: @card-padding;
+  margin: @card-margin;
+  width: @card-width;
+  box-shadow: @box-shadow-default;
+}
+
+// LESS with Nesting, Variables, Mixins, and Operators
+.locations-container {
+  padding: @container-padding;
+  text-align: center;
+  
+  h1 {
+    margin-bottom: @margin-bottom-default;
+  }
+}
+
+.locations-grid {
+  .flex-space-between-wrap(); // Mixin for flexbox layout
+}
+
+.location-card {
+  .card-style(); // Mixin for card styling
+
+  h2 {
+    margin-top: 0;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+
+  a {
+    color: @link-color;
+    text-decoration: none;
+  }
+}
+
+/* Responsiveness voor mobiele schermen */
+@media (max-width: @media-breakpoint) {
+  .location-card {
+    width: @mobile-card-width;
+    margin: @mobile-card-margin;
+  }
+}
