@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './header.css';
+// import './header.css';
 import Placeholder from '../pictures/placeholder.png';
 
 const Header = () => {

@@ -1,5 +1,259 @@
-p h1 {
-  background-color: red;
+/* Variables */
+/* Light and Dark Theme Variables */
+/* Mixin for Theme */
+/* General Styling */
+.home {
+  font-family: "Arial", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Header Styling */
+.Logo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+}
+.Logo .header button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Banner Styling */
+.banner {
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: var(--banner-bg);
+  color: var(--banner-text);
+  border-radius: 10px;
+}
+
+/* Movies Section */
+.movies {
+  width: 100%;
+  max-width: 1200px;
+}
+.movies .movie-grid {
+  display: flex;
+  justify-content: space-around;
+}
+.movies .movie-card {
+  width: 200px;
+  text-align: center;
+}
+.movies .movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Themes */
+.light {
+  --header-bg: map-get($colors, header-bg);
+  --header-text: map-get($colors, header-text);
+  --banner-bg: map-get($colors, banner-bg);
+  --banner-text: map-get($colors, banner-text);
+  --footer-bg: map-get($colors, footer-bg);
+  --footer-text: map-get($colors, footer-text);
+}
+
+.dark {
+  --header-bg: map-get($colors, header-bg);
+  --header-text: map-get($colors, header-text);
+  --banner-bg: map-get($colors, banner-bg);
+  --banner-text: map-get($colors, banner-text);
+  --footer-bg: map-get($colors, footer-bg);
+  --footer-text: map-get($colors, footer-text);
+}
+
+/* Variables */
+/* General Styling */
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.container .movies,
+.container .reviews {
+  width: 48%;
+}
+.container .movie-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container .movie-item {
+  width: 30%;
+  margin: 10px;
+  text-align: center;
+}
+.container .review-form {
+  margin-top: 10px;
+}
+.container .review-item {
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+}
+.container .discount-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .container .movies,
+  .container .reviews {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .container .movie-item {
+    width: 45%;
+    margin: 5px;
+  }
+  .container .review-item {
+    margin-bottom: 15px;
+  }
+}
+/* Header Styling */
+.header {
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+  width: 100%;
+  transition: background 0.3s, padding 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header.sticky {
+  background: #333;
+  padding: 5px 20px;
+}
+
+/* Logo Styling */
+.logo {
+  margin-right: auto;
+}
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Menu Toggle Styling */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+.menu-toggle .bar {
+  background: white;
+  height: 3px;
+  width: 25px;
+}
+
+/* Navbar Styling */
+nav {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    left: 20px;
+    z-index: 10;
+  }
+  .header {
+    height: 35px;
+  }
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+  }
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #444;
+  }
+  nav.active {
+    display: flex;
+    flex-direction: column;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  nav ul li {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #444;
+  }
+  nav ul li a {
+    padding: 10px;
+  }
+}
+/* PlaceholderPage.scss */
+.placeholder-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+.placeholder-container h1 {
+  font-size: 2rem;
+  color: #333;
+}
+.placeholder-container p {
+  font-size: 1.2rem;
+  color: #666;
 }
 
 body {

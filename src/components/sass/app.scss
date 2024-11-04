@@ -1,4 +1,8 @@
-@use "test/test.scss";
+// @use "test/test.scss";
+@use "home/home.scss";
+@use "film-recensies/film-recensies.scss";
+@use "header/header.scss";
+@use "films/films.scss";
 
 body {
     margin: 0;

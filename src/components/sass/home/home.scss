@@ -1,0 +1,103 @@
+/* Variables */
+$font-family: 'Arial', sans-serif;
+$spacing-small: 10px;
+$spacing-medium: 20px;
+$border-radius: 10px;
+$width-max: 1200px;
+
+/* Light and Dark Theme Variables */
+$light-theme: (
+  header-bg: #f0f0f0,
+  header-text: #333,
+  banner-bg: #fff,
+  banner-text: #000,
+  footer-bg: #f0f0f0,
+  footer-text: #333
+);
+
+$dark-theme: (
+  header-bg: #333,
+  header-text: #f0f0f0,
+  banner-bg: #444,
+  banner-text: #f0f0f0,
+  footer-bg: #333,
+  footer-text: #f0f0f0
+);
+
+/* Mixin for Theme */
+@mixin theme($colors) {
+  --header-bg: map-get($colors, header-bg);
+  --header-text: map-get($colors, header-text);
+  --banner-bg: map-get($colors, banner-bg);
+  --banner-text: map-get($colors, banner-text);
+  --footer-bg: map-get($colors, footer-bg);
+  --footer-text: map-get($colors, footer-text);
+}
+
+/* General Styling */
+.home {
+  font-family: $font-family;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing-medium;
+}
+
+/* Header Styling */
+.Logo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: $width-max;
+  padding: $spacing-small;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+
+  .header {
+    button {
+      padding: $spacing-small $spacing-medium;
+      cursor: pointer;
+    }
+  }
+}
+
+/* Banner Styling */
+.banner {
+  text-align: center;
+  margin: $spacing-medium 0;
+  padding: $spacing-medium;
+  background-color: var(--banner-bg);
+  color: var(--banner-text);
+  border-radius: $border-radius;
+}
+
+/* Movies Section */
+.movies {
+  width: 100%;
+  max-width: $width-max;
+
+  .movie-grid {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .movie-card {
+    width: 200px;
+    text-align: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: $border-radius;
+    }
+  }
+}
+
+/* Themes */
+.light {
+  @include theme($light-theme);
+}
+
+.dark {
+  @include theme($dark-theme);
+}

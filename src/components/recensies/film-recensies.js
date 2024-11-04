@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './film-recensies.css';
+// import './film-recensies.css';
 
 const movies = [
   { id: 1, title: "Movie 1", poster: "https://via.placeholder.com/150" },
