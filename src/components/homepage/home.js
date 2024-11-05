@@ -11,14 +11,14 @@ const HomePage = () => {
     return (
         <div className={darkMode ? 'home dark' : 'home light'}>
             <div className="Logo">
-                <h1>Cinema XYZ</h1>
+                <h1>Movie Time</h1>
                 {/* <button onClick={toggleTheme}>
                     {darkMode ? 'Light Mode' : 'Dark Mode'}
                 </button> */}
             </div>
 
             <section className="banner">
-                <h2>Welcome to Cinema XYZ</h2>
+                <h2>Welcome to Movie Time</h2>
                 <p>Catch the latest movies in our state-of-the-art theaters!</p>
             </section>
 
