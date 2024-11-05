@@ -1,0 +1,58 @@
+/* Variables */
+$padding: 20px;
+$margin-small: 10px;
+$margin-medium: 20px;
+$border-color: #ddd;
+$card-bg: #f9f9f9;
+$link-color: #007bff;
+$border-radius: 8px;
+$box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+/* Algemene styling voor de vestigingenpagina */
+.locations-container {
+  padding: $padding;
+  text-align: center;
+
+  h1 {
+    margin-bottom: $margin-medium;
+  }
+}
+
+/* Grid Styling */
+.locations-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Location Card Styling */
+.location-card {
+  background-color: $card-bg;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding: $padding;
+  margin: $margin-small;
+  width: 30%; /* Standaard drie blokken per rij */
+  box-shadow: $box-shadow;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+
+  a {
+    color: $link-color;
+    text-decoration: none;
+  }
+}
+
+/* Responsiveness voor mobiele schermen */
+@media (max-width: 768px) {
+  .location-card {
+    width: 100%; /* Eén blok per rij */
+    margin: $margin-small 0;
+  }
+}

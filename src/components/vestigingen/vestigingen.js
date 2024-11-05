@@ -1,5 +1,5 @@
 import React from "react";
-import './vestigingen.css';
+// import './vestigingen.css';
 
 const locations = [
   {

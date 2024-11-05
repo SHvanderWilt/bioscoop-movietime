@@ -11,6 +11,8 @@ $bg-review: #f9f9f9;
 $bg-discount: #d4edda;
 $color-discount-text: #155724;
 $border-radius: 5px;
+$img-width: 160px;
+$img-height: 250px;
 
 /* General Styling */
 .container {
@@ -33,6 +35,11 @@ $border-radius: 5px;
     width: $width-movie-item-desktop;
     margin: $margin-small;
     text-align: center;
+
+    img {
+      width: $img-width;
+      height: $img-height;
+    }
   }
 
   .review-form {

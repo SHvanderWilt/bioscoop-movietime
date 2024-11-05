@@ -1,17 +1,27 @@
 import React, { useState } from "react";
 // import './film-recensies.css';
+import Image from "../pictures/images.jpg";
+import Image1 from "../pictures/images1.jpg";
+import Image2 from "../pictures/images2.jpg";
+import Image3 from "../pictures/images3.jpg";
+import Image4 from "../pictures/images4.jpg";
+import ImageUntitled from "../pictures/Untitled.jpg";
+import Image5 from "../pictures/images5.jpg";
+import Image6 from "../pictures/images6.jpg";
+import ImageUntitledOne from "../pictures/Untitled1.jpg";
+import ImageDeadpool from "../pictures/deadpoolandwolverine_lob_crd_03.jpg";
 
 const movies = [
-  { id: 1, title: "Movie 1", poster: "https://via.placeholder.com/150" },
-  { id: 2, title: "Movie 2", poster: "https://via.placeholder.com/150" },
-  { id: 3, title: "Movie 3", poster: "https://via.placeholder.com/150" },
-  { id: 4, title: "Movie 4", poster: "https://via.placeholder.com/150" },
-  { id: 5, title: "Movie 5", poster: "https://via.placeholder.com/150" },
-  { id: 6, title: "Movie 6", poster: "https://via.placeholder.com/150" },
-  { id: 7, title: "Movie 7", poster: "https://via.placeholder.com/150" },
-  { id: 8, title: "Movie 8", poster: "https://via.placeholder.com/150" },
-  { id: 9, title: "Movie 9", poster: "https://via.placeholder.com/150" },
-  { id: 10, title: "Movie 10", poster: "https://via.placeholder.com/150" },
+  { id: 1, title: "Movie 1", poster: Image },
+  { id: 2, title: "Movie 2", poster: Image1},
+  { id: 3, title: "Movie 3", poster: Image2},
+  { id: 4, title: "Movie 4", poster: Image3},
+  { id: 5, title: "Movie 5", poster: Image4},
+  { id: 6, title: "Movie 6", poster: ImageUntitled},
+  { id: 7, title: "Movie 7", poster: Image5},
+  { id: 8, title: "Movie 8", poster: Image6},
+  { id: 9, title: "Movie 9", poster: ImageUntitledOne},
+  { id: 10, title: "Movie 10", poster: ImageDeadpool},
 ];
 
 const ReviewPage = () => {
