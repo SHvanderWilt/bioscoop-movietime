@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import './film-recensies.css';
 import Image from "../pictures/images.jpg";
 import Image1 from "../pictures/images1.jpg";
 import Image2 from "../pictures/images2.jpg";
@@ -12,16 +11,16 @@ import ImageUntitledOne from "../pictures/Untitled1.jpg";
 import ImageDeadpool from "../pictures/deadpoolandwolverine_lob_crd_03.jpg";
 
 const movies = [
-  { id: 1, title: "Movie 1", poster: Image },
-  { id: 2, title: "Movie 2", poster: Image1},
-  { id: 3, title: "Movie 3", poster: Image2},
-  { id: 4, title: "Movie 4", poster: Image3},
-  { id: 5, title: "Movie 5", poster: Image4},
-  { id: 6, title: "Movie 6", poster: ImageUntitled},
-  { id: 7, title: "Movie 7", poster: Image5},
-  { id: 8, title: "Movie 8", poster: Image6},
-  { id: 9, title: "Movie 9", poster: ImageUntitledOne},
-  { id: 10, title: "Movie 10", poster: ImageDeadpool},
+  { id: 1, title: "Ant-Man and the Wasp: Quantumania", poster: Image },
+  { id: 2, title: "Shang-Chi and the Legend of the Ten Rings", poster: Image1 },
+  { id: 3, title: "A Quiet Place: Day One", poster: Image2 },
+  { id: 4, title: "Scary Movie", poster: Image3 },
+  { id: 5, title: "Furiosa: A Mad Max Saga", poster: Image4 },
+  { id: 6, title: "Venom: The Last Dance", poster: ImageUntitled },
+  { id: 7, title: "The Voyage of Doctor Dolittle", poster: Image5 },
+  { id: 8, title: "Joker: Folie à Deux", poster: Image6 },
+  { id: 9, title: "Thunderbolts*", poster: ImageUntitledOne },
+  { id: 10, title: "Deadpool & Wolverine", poster: ImageDeadpool },
 ];
 
 const ReviewPage = () => {
@@ -30,7 +29,7 @@ const ReviewPage = () => {
 
   const addReview = (movieId, rating, comment) => {
     const newReview = { movieId, rating, comment };
-    setReviews([...reviews.slice(-2), newReview]); // Maximaal 3 recensies
+    setReviews([...reviews.slice(-2), newReview]); // Max 3 reviews
 
     if (reviews.length === 2) {
       setDiscountCode(`KORTING${Math.floor(Math.random() * 10000)}`);
@@ -66,23 +65,33 @@ const ReviewForm = ({ movie, addReview }) => {
   const [rating, setRating] = useState(1);
   const [comment, setComment] = useState("");
 
+  const handleRatingClick = (newRating) => setRating(newRating);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     addReview(movie.id, rating, comment);
     setComment(""); // Reset form
   };
 
+  const renderStars = () => (
+    <div className="star-rating">
+      {[1, 2, 3, 4, 5].map((star) => (
+        <span
+          key={star}
+          onClick={() => handleRatingClick(star)}
+          style={{ cursor: "pointer", color: star <= rating ? "#FFD700" : "#ccc" }}
+        >
+          ★
+        </span>
+      ))}
+    </div>
+  );
+
   return (
     <form onSubmit={handleSubmit} className="review-form">
       <label>
         Rating:
-        <select value={rating} onChange={(e) => setRating(Number(e.target.value))}>
-          {[1, 2, 3, 4, 5].map((star) => (
-            <option key={star} value={star}>
-              {star}
-            </option>
-          ))}
-        </select>
+        {renderStars()}
       </label>
       <textarea
         value={comment}
@@ -96,6 +105,12 @@ const ReviewForm = ({ movie, addReview }) => {
 };
 
 const ReviewList = ({ reviews, movies, discountCode }) => {
+  const renderStars = (rating) => (
+    <span style={{ color: "#FFD700" }}>
+      {"★".repeat(rating)}{"☆".repeat(5 - rating)}
+    </span>
+  );
+
   return (
     <div className="reviews">
       <h2>Jouw Recensies</h2>
@@ -104,7 +119,7 @@ const ReviewList = ({ reviews, movies, discountCode }) => {
         return (
           <div key={index} className="review-item">
             <h3>{movie.title}</h3>
-            <p>Rating: {review.rating} sterren</p>
+            <p>Rating: {renderStars(review.rating)}</p>
             <p>{review.comment}</p>
           </div>
         );

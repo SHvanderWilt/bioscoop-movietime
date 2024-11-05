@@ -27,18 +27,30 @@ $img-height: 250px;
   }
 
   .movie-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: $margin-small;
+    max-height: 70vh; // Limits height to enable scroll
+    overflow-y: auto; // Enables scrolling within the movie list only
+    padding: $padding-small;
   }
 
   .movie-item {
-    width: $width-movie-item-desktop;
     margin: $margin-small;
     text-align: center;
 
     img {
       width: $img-width;
       height: $img-height;
+    }
+
+    textarea {
+      width: $img-width;
+      height: 60px;
+    }
+
+    h3 {
+      height: 50px;
     }
   }
 
@@ -74,8 +86,12 @@ $img-height: 250px;
       margin-bottom: $margin-medium;
     }
 
+    .movie-list {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
     .movie-item {
-      width: $width-movie-item-mobile;
+      width: auto;
       margin: 5px;
     }
 
