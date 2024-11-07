@@ -1,5 +1,4 @@
-import React from "react";
-// import './vestigingen.css';
+import React, { useState } from "react";
 
 const locations = [
   {
@@ -47,11 +46,27 @@ const locations = [
 ];
 
 const VestigingenPage = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Filter locations based on the search query
+  const filteredLocations = locations.filter((location) =>
+    location.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    location.address.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    location.phone.includes(searchQuery)
+  );
+
   return (
     <div className="locations-container">
       <h1>Onze Vestigingen</h1>
+      <input
+        type="text"
+        placeholder="Zoek vestigingen..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="search-field"
+      />
       <div className="locations-grid">
-        {locations.map((location) => (
+        {filteredLocations.map((location) => (
           <div key={location.id} className="location-card">
             <h2>{location.name}</h2>
             <p><strong>Adres:</strong> {location.address}</p>

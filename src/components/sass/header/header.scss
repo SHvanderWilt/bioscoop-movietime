@@ -3,31 +3,41 @@
   background: #000000;
   color: white;
   padding: 10px 20px;
+  position: relative;
+  transition: background 0.3s, padding 0.3s;
   display: flex;
   align-items: center;
-  transition: background 0.3s, padding 0.3s;
-  height: 35px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+
+  &.sticky {
+    background: #000000;
+    height: 40px;
+  }
 }
 
 /* Logo Styling */
 .logo {
-  margin-right: 20px; // Creates spacing between the logo and the nav links
+  margin-right: 20px; // Add a margin between the logo and the nav
+  background-color: #444;
+  border-radius: 10px;
+
   img {
     width: 50px;
     height: 50px;
-    background-color: #333;
-    border-radius: 10px;
   }
 }
 
 /* Navbar Styling */
-nav {
-  flex-grow: 1; // Ensures nav takes remaining space after logo
+.nav {
+  display: flex;
+  justify-content: flex-end; // Aligns the nav links to the right
+  align-items: center;
+
   ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    gap: 20px;
+    gap: 20px; // Space between nav items
 
     li {
       a {
@@ -63,11 +73,12 @@ nav {
   .menu-toggle {
     display: flex;
     position: absolute;
-    left: 20px;
+    right: 20px;
     z-index: 10;
   }
 
   .header {
+    height: 40px;
     justify-content: center;
   }
 
@@ -78,7 +89,7 @@ nav {
     z-index: 9;
   }
 
-  nav {
+  .nav {
     display: none;
     position: absolute;
     top: 100%;
@@ -96,6 +107,7 @@ nav {
       width: 100%;
       padding: 0;
       margin: 0;
+      background: linear-gradient(90deg, rgb(0, 102, 204) 0%, rgb(197, 0, 204) 100%);
 
       li {
         text-align: center;

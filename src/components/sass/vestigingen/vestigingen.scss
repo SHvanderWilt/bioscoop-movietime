@@ -22,7 +22,8 @@ $box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 .locations-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center; /* Pas dit aan voor een nette uitlijning */
+  gap: $margin-small; /* Gebruik gap in plaats van margin om consistentie te waarborgen */
 }
 
 /* Location Card Styling */
@@ -31,11 +32,12 @@ $box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border: 3px solid $border-color;
   border-radius: $border-radius;
   padding: $padding;
-  margin: $margin-small;
-  width: 30%; /* Standaard drie blokken per rij */
   box-shadow: $box-shadow;
   background-color: #919191;
-
+  
+  width: calc(33.333% - #{$margin-small}); /* Drie blokken per rij met ruimte ertussen */
+  margin: 0; /* Geen extra marge aan de zijkanten */
+  
   h2 {
     margin-top: 0;
   }

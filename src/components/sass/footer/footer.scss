@@ -1,0 +1,38 @@
+// Variables for colors and font sizes
+$footer-bg-color: #000000;
+$footer-text-color: #f9f9f9;
+$footer-link-color: #ccc;
+$footer-link-hover-color: #fff;
+
+.footer {
+  background-color: $footer-bg-color;
+  padding: 20px;
+  color: $footer-text-color;
+  text-align: center;
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      margin: 0;
+      font-size: 0.9em;
+    }
+
+    .footer-nav {
+      margin-top: 10px;
+
+      a {
+        color: $footer-link-color;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 0.9em;
+
+        &:hover {
+          color: $footer-link-hover-color;
+        }
+      }
+    }
+  }
+}
