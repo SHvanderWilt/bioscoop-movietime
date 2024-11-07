@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-
 // Importeer je pagina componenten hier
 import HomePage from './components/homepage/home';
 import ReviewPage from './components/recensies/film-recensies';

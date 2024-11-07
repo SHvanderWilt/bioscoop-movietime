@@ -1,123 +1,111 @@
 /* Header Styling */
 .header {
-    background: #333;
-    color: white;
-    padding: 10px 20px;
-    position: relative;
-    width: 100%;
-    transition: background 0.3s, padding 0.3s;
+  background: #000000;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s, padding 0.3s;
+  height: 35px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo Styling */
+.logo {
+  margin-right: 20px; // Creates spacing between the logo and the nav links
+  img {
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border-radius: 10px;
+  }
+}
+
+/* Navbar Styling */
+nav {
+  flex-grow: 1; // Ensures nav takes remaining space after logo
+  ul {
+    list-style: none;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-    &.sticky {
-      background: #333;
-      padding: 5px 20px;
+    gap: 20px;
+
+    li {
+      a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
-  
-  /* Logo Styling */
-  .logo {
-    margin-right: auto; // Ensure the logo is on the left
-  
-    img {
-      width: 50px;
-      height: 50px;
-    }
+}
+
+/* Menu Toggle Styling */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+
+  .bar {
+    background: white;
+    height: 3px;
+    width: 25px;
   }
-  
-  /* Menu Toggle Styling */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .menu-toggle {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-  
-    .bar {
-      background: white;
-      height: 3px;
-      width: 25px;
-    }
-  }
-  
-  /* Navbar Styling */
-  nav {
     display: flex;
-    align-items: center;
-    margin-right: auto; // Removed margin-right: 1100px to fix layout issue
-  
+    position: absolute;
+    left: 20px;
+    z-index: 10;
+  }
+
+  .header {
+    justify-content: center;
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #444;
+
+    &.active {
+      display: flex;
+      flex-direction: column;
+    }
+
     ul {
-      list-style: none;
+      flex-direction: column;
+      width: 100%;
       padding: 0;
       margin: 0;
-      display: flex;
-      gap: 20px; // Space between nav items
-  
+
       li {
+        text-align: center;
+        padding: 10px;
+        border-top: 1px solid #444;
+
         a {
-          color: white;
-          text-decoration: none;
           padding: 10px;
-          display: block;
-  
-          &:hover {
-            text-decoration: underline;
-          }
         }
       }
     }
   }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: flex;
-      position: absolute;
-      left: 20px; // Ensure hamburger menu is on the left
-      z-index: 10; // Make sure the toggle is above the nav
-    }
-  
-    .header {
-      height: 35px;
-    }
-  
-    .logo {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%); // Center the logo
-      z-index: 9; // Ensure logo remains behind the menu toggle
-    }
-  
-    nav {
-      display: none;
-      position: absolute; // Make sure the nav is positioned properly
-      top: 100%; // Ensure the nav appears right under the header
-      left: 0;
-      width: 100%;
-      background-color: #444; // Give background color to nav in responsive mode
-  
-      &.active {
-        display: flex;
-        flex-direction: column; // Stack menu items vertically
-      }
-  
-      ul {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-  
-        li {
-          text-align: center;
-          padding: 10px;
-          border-top: 1px solid #444;
-  
-          a {
-            padding: 10px;
-          }
-        }
-      }
-    }
-  }
-  
+}

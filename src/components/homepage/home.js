@@ -1,49 +1,30 @@
-import React, { useState } from 'react';
-// import './home.css';
+import React from 'react';
+import Image from "../pictures/images.jpg";
+import Image1 from "../pictures/images1.jpg";
+import Image2 from "../pictures/images2.jpg";
 
 const HomePage = () => {
-    const [darkMode, setDarkMode] = useState(false);
-
-    const toggleTheme = () => {
-        setDarkMode(!darkMode);
-    };
-
-    return (
-        <div className={darkMode ? 'home dark' : 'home light'}>
-            <div className="Logo">
-                <h1>Movie Time</h1>
-                {/* <button onClick={toggleTheme}>
-                    {darkMode ? 'Light Mode' : 'Dark Mode'}
-                </button> */}
-            </div>
-
-            <section className="banner">
-                <h2>Welcome to Movie Time</h2>
-                <p>Catch the latest movies in our state-of-the-art theaters!</p>
-            </section>
-
-            <section className="movies">
-                <h2>Now Showing</h2>
-                <div className="movie-grid">
-                    <div className="movie-card">
-                        <img src="movie1.jpg" alt="Movie 1" />
-                        <h3>Movie 1</h3>
-                        <p>Action/Adventure</p>
-                    </div>
-                    <div className="movie-card">
-                        <img src="movie2.jpg" alt="Movie 2" />
-                        <h3>Movie 2</h3>
-                        <p>Comedy/Drama</p>
-                    </div>
-                    <div className="movie-card">
-                        <img src="movie3.jpg" alt="Movie 3" />
-                        <h3>Movie 3</h3>
-                        <p>Horror/Thriller</p>
-                    </div>
-                </div>
-            </section>
+  return (
+    <div className='home'>
+      <section className="movies">
+        <h2>Recommended for you</h2>
+        <div className="movie-grid">
+          <div className="movie-card">
+            <img src={Image} alt="Ant-Man and the Wasp: Quantumania" />
+            <h3>Ant-Man and the Wasp: Quantumania</h3>
+          </div>
+          <div className="movie-card">
+            <img src={Image1} alt="Shang-Chi and the Legend of the Ten Rings" />
+            <h3>Shang-Chi and the Legend of the Ten Rings</h3>
+          </div>
+          <div className="movie-card">
+            <img src={Image2} alt="A Quiet Place: Day One" />
+            <h3>A Quiet Place: Day One</h3>
+          </div>
         </div>
-    );
+      </section>
+    </div>
+  );
 };
 
 export default HomePage;

@@ -2,7 +2,7 @@
 $padding: 20px;
 $margin-small: 10px;
 $margin-medium: 20px;
-$border-color: #ddd;
+$border-color: #000000;
 $card-bg: #f9f9f9;
 $link-color: #007bff;
 $border-radius: 8px;
@@ -28,12 +28,13 @@ $box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 /* Location Card Styling */
 .location-card {
   background-color: $card-bg;
-  border: 1px solid $border-color;
+  border: 3px solid $border-color;
   border-radius: $border-radius;
   padding: $padding;
   margin: $margin-small;
   width: 30%; /* Standaard drie blokken per rij */
   box-shadow: $box-shadow;
+  background-color: #919191;
 
   h2 {
     margin-top: 0;

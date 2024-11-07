@@ -99,7 +99,9 @@ const ReviewForm = ({ movie, addReview }) => {
         placeholder="Schrijf een recensie"
         required
       />
-      <button type="submit">Plaats Recensie</button>
+      <button class="btn" type="submit" id="customBtn" data-darkreader-inline-color="" data-darkreader-inline-border-top="" 
+      data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left="" 
+      data-darkreader-inline-boxshadow="" data-darkreader-inline-bgcolor="" data-darkreader-inline-bgimage="">Plaats review</button>
     </form>
   );
 };
